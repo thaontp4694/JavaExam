@@ -1,4 +1,4 @@
-import entities.Ex1;
+import entities.Ex2;
 import entities.Student;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,10 +10,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestEx1 {
+public class TestEx2 {
 
     @Test
-    public void TestEx1(){
+    public void TestEx2(){
         List<Student> students = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader("data.csv"));
@@ -26,7 +26,7 @@ public class TestEx1 {
         } catch (Exception e) {
 
         }
-        Ex1.listTopLT(students);
-        Assertions.assertTrue(students.get(0).getLt() > students.get(1).getLt());
+        List<Student> dsOutlook = Ex2.getOutlook(students);
+        Assertions.assertTrue(dsOutlook.get(0).getEmail().contains("outlook.com"));
     }
 }
